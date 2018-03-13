@@ -15,7 +15,7 @@ module.exports = function (context) {
                 console.log('Adding banner attribute');
                 data = data.replace(/<application/g, '<application android:banner="@drawable/banner"');
             }
-            if (!(/<application[^>]*\bandroid:isGame="true"/).test(data)) {
+            if (!(/<application[^>]*\bandroid:isGame/).test(data)) {
                 console.log('Adding isGame attribute');
                 data = data.replace(/<application/g, '<application android:isGame="false"');
             }
