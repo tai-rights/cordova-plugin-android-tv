@@ -5,8 +5,7 @@ module.exports = function (context) {
         path = context.requireCordovaModule('path'),
         platformRoot = path.join(context.opts.projectRoot, 'platforms/android'),
         manifestFile = path.join(platformRoot, 'AndroidManifest.xml');
-
-    if (fs.existsSync(manifestFile)) {
+    function processManifest(manifestFile){
         fs.readFile(manifestFile, 'utf8', function (err, data) {
             if (err) {
                 throw new Error('Unable to find AndroidManifest.xml: ' + err);
@@ -23,5 +22,15 @@ module.exports = function (context) {
                 if (err) throw new Error('Unable to write into AndroidManifest.xml: ' + err);
             })
         });
+    }
+    if (fs.existsSync(manifestFile)) {
+        processManifest(manifestFile);
+    } else {
+        /* Fallback for cordova 7+ folder structure */
+        platformRoot = path.join(context.opts.projectRoot, 'platforms/android/app/src/main');
+        manifestFile = path.join(platformRoot, 'AndroidManifest.xml');
+        if (fs.existsSync(manifestFile)) {
+            processManifest(manifestFile);
+        }
     }
 };
