@@ -12,11 +12,11 @@ This plugin expects banner image to be present in @drawable/banner which for cor
 
 Source
 ------
-https://github.com/frontyard/cordova-plugin-android-tv
+https://github.com/dntstp/cordova-plugin-android-tv
 
 Forked from
 -----------
-https://github.com/hughisaacs2/Cordova-Android-TV-Plugin
+https://github.com/frontyard/cordova-plugin-android-tv
 
 License
 -------
