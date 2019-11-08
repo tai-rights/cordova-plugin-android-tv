@@ -1,8 +1,7 @@
 #!/usr/bin/env node
 
-
 module.exports = function (context) {
-    const fs = require('fs'),
+    var fs = require('fs'),
         path = require('path'),
         platformRoot = path.join(context.opts.projectRoot, 'platforms/android'),
         manifestFile = path.join(platformRoot, 'AndroidManifest.xml');
