@@ -27,8 +27,6 @@
             <category android:name="tv.ouya.intent.category.APP"/>
             <category android:name="android.intent.category.LEANBACK_LAUNCHER"/>
         </config-file>
-        
-        <resource-file src="www/res/icon/android/drawable/banner.png" target="app/src/main/res/drawable/banner.png" />
 
         <hook type="after_prepare" src="patch.js"/>
     </platform>
